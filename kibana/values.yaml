@@ -137,11 +137,13 @@ service:
 
 ingress:
   enabled: true
+  className: "nginx"
+  pathtype: ImplementationSpecific
   annotations: 
     kubernetes.io/ingress.class: nginx
   # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: kubernetes.docker.internal
+    - host: kuberentes.docker.
       paths:
         - path: /
   #tls: []
