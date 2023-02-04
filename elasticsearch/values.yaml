@@ -75,9 +75,10 @@ hostAliases: []
 #  - "foo.local"
 #  - "bar.local"
 
-image: "docker.elastic.co/elasticsearch/elasticsearch"
-imageTag: "8.6.1"
-imagePullPolicy: "Always"
+image:
+  registry: docker.io
+  repository: bitnami/elasticsearch
+  tag: 8.6.1-debian-11-r0
 
 podAnnotations: {}
 # iam.amazonaws.com/role: es-cluster
