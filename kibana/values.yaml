@@ -39,7 +39,7 @@ hostAliases: []
 
 image: "docker.elastic.co/kibana/kibana"
 imageTag: "8.5.1"
-imagePullPolicy: "IfNotPresent"
+imagePullPolicy: "Always"
 
 # additionals labels
 labels: {}
@@ -137,13 +137,11 @@ service:
 
 ingress:
   enabled: true
-  className: "nginx"
-  pathtype: ImplementationSpecific
   annotations: 
     kubernetes.io/ingress.class: nginx
   # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: kibana-example.local
+    - host: kubernetes.docker.internal
       paths:
         - path: /
   #tls: []
